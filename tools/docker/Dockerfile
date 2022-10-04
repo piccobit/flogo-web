@@ -16,6 +16,7 @@ RUN set -ex \
     # procps` required`by flogo-web server to execute `ps` command
     procps \
     ca-certificates \
+    apt-transport-https \
   && mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH" \
   && rm -rf /var/lib/apt/lists/*
 
