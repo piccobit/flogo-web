@@ -1,7 +1,7 @@
-ARG GOLANG_VERSION=1.12.6
+ARG GOLANG_VERSION=1.19.1
 FROM golang:$GOLANG_VERSION AS gobase
 
-FROM node:10.16-slim as base
+FROM node:18.10.0-slim as base
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
@@ -16,7 +16,6 @@ RUN set -ex \
     # procps` required`by flogo-web server to execute `ps` command
     procps \
   && mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH" \
-  && npm install --no-cache -g yarn \
   && rm -rf /var/lib/apt/lists/*
 
 FROM base AS builder
