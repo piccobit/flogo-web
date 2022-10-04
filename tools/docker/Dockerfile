@@ -27,6 +27,7 @@ ENV FLOGO_LIB_VERSION ${CORE_VERSION}
 ENV BUILD_DIR /tmp/build
 ENV FLOGO_WEB_LOCALDIR ${BUILD_DIR}/dist/local
 ENV GO111MODULE on
+ENV NODE_OPTIONS --openssl-legacy-provider
 RUN GO111MODULE=off go get -u -v github.com/project-flogo/cli/... \
 #    && mkdir -p $GOPATH/src/github.com/project-flogo \
 #    && cd $GOPATH/src/github.com/project-flogo \
