@@ -15,6 +15,7 @@ RUN set -ex \
     git \
     # procps` required`by flogo-web server to execute `ps` command
     procps \
+    ca-certificates \
   && mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH" \
   && rm -rf /var/lib/apt/lists/*
 
